@@ -3,8 +3,12 @@ language: scala
 scala:
   - 2.10.2
 
-addons:
-  postgresql: "9.3"
+#addons:
+ # postgresql: "9.3"
+services:
+  - postgres
+  
+build_image: drydock/u12scapls:tip
 
 before_script:
   - psql -U postgres -f pg.sql
